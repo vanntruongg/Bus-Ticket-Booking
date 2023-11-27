@@ -1,4 +1,4 @@
-# CT252 - Base of Project Information Systems
+# CT252 - Base Project of Information Systems
 #### Building a simple and convenient online booking system, making it easy for passengers to choose and book tickets, the system provides complete information about the schedule, pick-up and drop-off points, and the number of available seats of the bus and passengers can easily look up and manage their tickets.
 
 ## Installation
