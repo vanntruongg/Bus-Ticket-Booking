@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+    <style>
+        .main {
+            width: 40%;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .box {
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            text-align: center;
+            color: #9524cc;
+            font-size: 24px;
+            padding: 6px 0 6px 10px;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .key {
+            width: 160px;
+        }
+
+        .value {
+            color: #2381a9;
+        }
+
+        .sub-title {
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="title">Thông tin tài khoản</div>
+        <div class="box">
+            <table>
+                <tr>
+                    <th class="key">Tên tài khoản(email):</th>
+                    <td class="value"><span th:text="${email}"></span></td>
+                </tr>
+                <tr>
+                    <th class="key">Mật khẩu:</th>
+                    <td class="value"><span th:text="${password}"></span></td>
+                </tr>
+
+            </table>
+        </div>
+</div>
+</body>
+</html>

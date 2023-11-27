@@ -1,0 +1,63 @@
+server:
+  port: 8080
+
+spring:
+  mvc:
+  #    locale: vi_VN
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/obtbms
+    username: root
+    password:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+        show_sql: true
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: obtbms@gmail.com
+    password: ayucbypwerkjlqgz
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            trust: smtp.gmail.com
+  thymeleaf:
+    enabled: true
+    prefix: classpath:/templates/
+    suffix: .html
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2MB
+      max-request-size: 2MB
+      resolve-lazily: true
+
+jwt:
+  secret: "97c0c3367b199d00cc6234faf02e7747b22dc21115af1f355822d50abf48a1b01807985bcf5b192d5758ba8895e24ff9f69df2bc18a0e497e988838135658630"
+  type: JWT
+  header: "Authorization"
+  prefix: "Bearer "
+  expire-time-access-token: 3600000    # 1h
+  expire-time-refresh-token: 604800000  # 1week
+#  expire-time-access-token:  300000    # 5p
+#  expire-time-refresh-token: 600000  # 10p
+
+#  mail
+
+paypal:
+  mode: sandbox
+  client:
+    id: Aa5y_xnuhr85-O-DyeT8VTn5Qizt_RG-F7TXxHfYBVuLrhpZUR8BUQ3aWdOwY6TL5-PlTWteULDlEnYk
+    secret: ECnuThUZKsDgVakOuar0GlG-APi3eMPZqGILk_eA0wQO8M1DfabVmVWdGKWViiVLFZtfxvMGrSUVAOsj
+
+
+
