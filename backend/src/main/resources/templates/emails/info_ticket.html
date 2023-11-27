@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+    <style>
+        .main {
+            width: 40%;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .box {
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            text-align: center;
+            color: #9524cc;
+            font-size: 24px;
+            padding: 6px 0 6px 10px;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .key {
+            width: 160px;
+        }
+
+        .value {
+            color: #2381a9;
+        }
+
+        .sub-title {
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="title">Thông tin đặt vé</div>
+    <div th:each="ticket, index : ${tickets}">
+        <div class="box">
+<!--            <h3 class="">Chuyến đi</h3>-->
+            <div class="">
+                <span class="sub-title" th:if="${index.index == 0}">Chuyến đi</span>
+                <span class="sub-title" th:if="${index.index == 1}">Chuyến về</span>
+            </div>
+            <table>
+                <tr>
+                    <th class="key">Mã đặt vé:</th>
+                    <td class="value"><span th:text="${ticket.ticketId}"></span></td>
+                </tr>
+                <tr>
+                    <th class="key">Tuyến xe:</th>
+                    <td class="value"><span th:text="${ticket.trip.route.originId.locationName}"></span> - <span th:text="${ticket.trip.route.destinationId.locationName}"></span></td>
+                </tr>
+                <tr>
+                    <th class="key">Thời gian:</th>
+                    <td class="value"><span th:text="${#dates.format(ticket.trip.departureTime, 'HH:mm')} + ' - ' + ${#dates.format(ticket.tripDate, 'dd/MM/yyyy')}"></span></td>
+                </tr>
+                <tr>
+                    <th class="key">Điểm lên xe:</th>
+                    <td class="value"><span th:text="${ticket.routePoint.pointName}"></span><br><span th:text="${ticket.routePoint.addressDetail}"></span></td>
+                </tr>
+                <tr>
+                    <th class="key">Số vé:</th>
+                    <td class="value"><span th:text="${ticket.seats.size()}"></span></td>
+                </tr>
+                <tr>
+                    <th class="key">Mã ghế:</th>
+                    <td class="value"><span th:each="seat : ${ticket.seats}" th:text="${seat.seatCode} + ' '"></span></td>
+                </tr>
+                <tr>
+                    <th class="key">Giá vé:</th>
+                    <td class="value"><span th:text="${#numbers.formatDecimal(ticket.trip.route.price, 3, 0, 'POINT')} + '₫'"></span></td>
+                </tr>
+                <tr>
+                    <th class="key">Biển số xe:</th>
+                    <td class="value"><span th:text="${ticket.trip.bus.licensePlate}"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
