@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-moz-selection {
+  color: white;
+  background: #00a48f;
+}
+
+::selection {
+  color: white;
+  background: #00a48f;
+}
+
+.flex-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input {
+  outline: none;
+}
+
+:where(.css-dev-only-do-not-override-fpg3f5).ant-picker-dropdown {
+  position: absolute;
+  top: 260px !important;
+}
+
+.ant-space-item {
+  width: 100%;
+}
+
+:where(.css-dev-only-do-not-override-fpg3f5).ant-picker
+  .ant-picker-input
+  > input {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.ant-picker-footer {
+  display: none;
+}
+
+.ant-popover-arrow {
+  display: none !important;
+}
+
+.ant-popover-inner {
+  padding: 0 !important;
+}
+
+.ant-popover-open {
+  border: 1px solid #00a48f;
+}
+
+td {
+  cursor: pointer;
+}
+.ant-btn-primary {
+  background-color: #00a48f;
+}
+
+.ag-cell-focus,
+.ag-cell-no-focus {
+  border: none !important;
+}
+/* This CSS is to not apply the border for the column having 'no-border' class */
+.no-border.ag-cell:focus {
+  border: none !important;
+  outline: none;
+}
+
+.ant-popconfirm-inner-content {
+  padding: 10px;
+}
+
+/* Đổi màu chữ của bước đã hoàn thành */
+.ant-steps-item-finish .ant-steps-item-container .ant-steps-item-icon {
+  background-color: #8effe6 !important;
+  border-color: #8effe6 !important;
+}
+/* Đổi màu chữ của bước đã hoàn thành */
+:where(.css-dev-only-do-not-override-1n5qrsw).ant-steps
+  .ant-steps-item-finish
+  .ant-steps-item-icon
+  > .ant-steps-icon {
+  color: #028374;
+}
